@@ -31,7 +31,7 @@
     //Version 3
     //Nos hemos creado un componente.
     //Un componente en React es una función que recibe unos props y devuelve un elemento React
-    const Message=props => <span className='message'>{props.children}</span>
+    const Message=({children, name}) => <span className='message'>{children} - {name}</span>
 /*
     //Version 1
     const element=(
@@ -53,7 +53,7 @@
     //Pasamos el contenido por children
     const element=(
       <div className='container' id='element'>
-        <Message>Hello World</Message>
+        <Message name="Iván">Hello World</Message>
         <Message>Goodbye</Message>
     </div>
     );
