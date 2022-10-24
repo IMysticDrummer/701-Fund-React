@@ -22,9 +22,30 @@
     const className='container';
     const id='element';
     const myChildren='Hello World';
+    const props={
+      className: 'container',
+      id: 'element'
+    };
+
     const getChildren=() => myChildren;
-    const element=<div className={className} id={id}>
+    const span=<span>
       {getChildren()}
+      {'Goodbye World!!'}
+      {5}
+      {null}
+      {true}
+      {'true'}
+      {JSON.stringify({a: 1, b:2})}
+      {4<5? 'minor':'mayor'}
+      ----
+      {4<5 && 'minor after conditional true with &&'}
+      ----
+      {4>5 && 'mayor after conditional false with &&'}
+      ----
+      
+    </span>
+    const element=<div {...props}>
+      {span}
     </div>
 
     console.log(element)

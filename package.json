@@ -1,0 +1,22 @@
+{
+  "name": "repo-ivan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IMysticDrummer/701-Fund-React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IMysticDrummer/701-Fund-React/issues"
+  },
+  "homepage": "https://github.com/IMysticDrummer/701-Fund-React#readme",
+  "devDependencies": {
+    "eslint": "^8.26.0"
+  }
+}
