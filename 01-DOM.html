@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/javascript">
+    const rootElement=document.querySelector('#root');
+    const element=document.createElement('div');
+    element.textContent='Hello world';
+    element.className='container';
+    console.log(element);
+    rootElement.appendChild(element);
+  </script>
+</html>
