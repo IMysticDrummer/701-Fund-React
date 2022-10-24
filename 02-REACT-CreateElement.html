@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!--Descargo el core de React-->
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <!--Descargamos la librería de ReactDom-->
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <!--Ahora podemos acceder a React-->
+  <script type="text/javascript">
+    const rootElement=document.querySelector('#root');
+    const element=React.createElement('div',{
+      className: 'container',
+      id: 'id'
+    },
+    'hello world',
+    'goodbye world',
+    React.createElement('span',{children: 'Hello World Again'})
+    );
+
+    //element.textContent='Hello world';
+    //element.className='container';
+    console.log(element);
+    //rootElement.appendChild(element);
+    ReactDOM.createRoot(rootElement).render(element);
+  </script>
+</html>
