@@ -1,0 +1,57 @@
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!--Descargo el core de React-->
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <!--Descargamos la librería de ReactDom-->
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/@babel/standalone/babel.min.js"
+  ></script>
+  <!--Ahora podemos acceder a React-->
+  <script type="text/babel">
+    const rootElement = document.querySelector("#root");
+    const reactRoot = ReactDOM.createRoot(rootElement);
+
+    //State guarda el valor, que sólo se actulizará cuando cliquemos encima
+    const Clock = () => {
+      //Usar la hook useState para generar un estado en React.
+      //El primer elemento es el valor, y el segundo es la función que modificará el estado.
+      const [now, setNow] = React.useState(new Date().toLocaleTimeString());
+
+      //useEffect ejecuta la función que recibe cada vez que se termina la
+      //renderización de un componente.
+      //Como colocamos un [] como terver parámetro de useEffect, sólo lo ejecutará después del
+      //primer render
+      React.useEffect(() => {
+        const tick = () => setNow(new Date().toLocaleTimeString());
+
+        setInterval(() => {
+          tick();
+        }, 1000);
+      }, []);
+
+      return (
+        <div
+          key='1'
+          className='container'
+          onClick={() => {
+            setNow(new Date().toLocaleTimeString());
+          }}
+        >
+          <span className='clock'>{now}</span>
+        </div>
+      );
+    };
+
+    reactRoot.render(<Clock />);
+  </script>
+</html>
