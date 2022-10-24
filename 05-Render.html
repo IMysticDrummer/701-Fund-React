@@ -1,0 +1,43 @@
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!--Descargo el core de React-->
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <!--Descargamos la librería de ReactDom-->
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/@babel/standalone/babel.min.js"
+  ></script>
+  <!--Ahora podemos acceder a React-->
+  <script type="text/babel">
+    const rootElement = document.querySelector("#root");
+    const reactRoot = ReactDOM.createRoot(rootElement);
+
+    function tick() {
+      const now = new Date().toLocaleTimeString();
+      const element = (
+        <div
+          key='1'
+          className='container'
+          id='element'
+        >
+          <span className='clock'>{now}</span>
+        </div>
+      );
+
+      reactRoot.render(element);
+    }
+
+    setInterval(tick, 1000);
+
+    console.log(element);
+  </script>
+</html>
