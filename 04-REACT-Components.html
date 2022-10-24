@@ -1,0 +1,65 @@
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!--Descargo el core de React-->
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <!--Descargamos la librería de ReactDom-->
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/@babel/standalone/babel.min.js"
+  ></script>
+  <!--Ahora podemos acceder a React-->
+  <script type="text/babel">
+    const rootElement=document.querySelector('#root');
+    
+    //Version 1
+    //const message=msg => <span className='message'>{msg}</span>
+
+    //Version 2
+    //Nos hemos creado un componente.
+    //Un componente en React es una función que recibe unos props y devuelve un elemento React
+    //const Message=props => <span className='message'>{props.msg}</span>
+
+    //Version 3
+    //Nos hemos creado un componente.
+    //Un componente en React es una función que recibe unos props y devuelve un elemento React
+    const Message=props => <span className='message'>{props.children}</span>
+/*
+    //Version 1
+    const element=(
+      <div className='container' id='element'>
+        {message('Hello World')}
+        {message('Goodbye')}
+    </div>
+    );
+*/
+    //Version 2
+/*    const element=(
+      <div className='container' id='element'>
+        <Message msg='Hello World' />
+        <Message msg='Goodbye' />
+    </div>
+    );
+*/
+    //Version 3
+    //Pasamos el contenido por children
+    const element=(
+      <div className='container' id='element'>
+        <Message>Hello World</Message>
+        <Message>Goodbye</Message>
+    </div>
+    );
+
+    console.log(element)
+
+    ReactDOM.createRoot(rootElement).render(element)
+  </script>
+</html>
