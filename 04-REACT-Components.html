@@ -18,8 +18,8 @@
   ></script>
   <!--Ahora podemos acceder a React-->
   <script type="text/babel">
-    const rootElement=document.querySelector('#root');
-    
+    const rootElement = document.querySelector("#root");
+
     //Version 1
     //const message=msg => <span className='message'>{msg}</span>
 
@@ -31,8 +31,12 @@
     //Version 3
     //Nos hemos creado un componente.
     //Un componente en React es una función que recibe unos props y devuelve un elemento React
-    const Message=({children, name}) => <span className='message'>{children} - {name}</span>
-/*
+    const Message = ({ children, name }) => (
+      <span className='message'>
+        {children} - {name}
+      </span>
+    );
+    /*
     //Version 1
     const element=(
       <div className='container' id='element'>
@@ -42,7 +46,7 @@
     );
 */
     //Version 2
-/*    const element=(
+    /*    const element=(
       <div className='container' id='element'>
         <Message msg='Hello World' />
         <Message msg='Goodbye' />
@@ -51,15 +55,18 @@
 */
     //Version 3
     //Pasamos el contenido por children
-    const element=(
-      <div className='container' id='element'>
-        <Message name="Iván">Hello World</Message>
+    const element = (
+      <div
+        className='container'
+        id='element'
+      >
+        <Message name='Iván'>Hello World</Message>
         <Message>Goodbye</Message>
-    </div>
+      </div>
     );
 
-    console.log(element)
+    console.log(element);
 
-    ReactDOM.createRoot(rootElement).render(element)
+    ReactDOM.createRoot(rootElement).render(element);
   </script>
 </html>
