@@ -25,6 +25,7 @@
     const Clock = () => {
       //Usar la hook useState para generar un estado en React.
       //El primer elemento es el valor, y el segundo es la función que modificará el estado.
+      const [count, setCount] = React.useState(0);
       const [now, setNow] = React.useState(new Date().toLocaleTimeString());
 
       //useEffect ejecuta la función que recibe cada vez que se termina la
@@ -52,6 +53,13 @@
           className="container"
           onClick={() => {
             setNow(new Date().toLocaleTimeString());
+            //Esto sólo sumará 1, ya que aqui coge datos de una "foto"
+            setCount(count + 1);
+            setCount(count + 1);
+            //Esto sí que me aumentará dos, ya que aplica las reglas de una en una
+            //comprobando el cambio de estado en cada llamada, con dos render
+            setCount((c) => c + 1);
+            setCount((c) => c + 1);
           }}
         >
           <span className="clock">{now}</span>
