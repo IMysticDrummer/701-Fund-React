@@ -34,20 +34,27 @@
       React.useEffect(() => {
         const tick = () => setNow(new Date().toLocaleTimeString());
 
-        setInterval(() => {
+        const interval = setInterval(() => {
           tick();
         }, 1000);
+
+        //Esto sólo se va a ejecutar sólo cuando se muera el componente.
+        //Con clearInterval limpiamos el intervalo para que no quede funcionando en
+        //background y así limpar memoria y evitar el seteo de un elemento que ya no existirá.
+        return () => {
+          clearInterval(interval);
+        };
       }, []);
 
       return (
         <div
-          key='1'
-          className='container'
+          key="1"
+          className="container"
           onClick={() => {
             setNow(new Date().toLocaleTimeString());
           }}
         >
-          <span className='clock'>{now}</span>
+          <span className="clock">{now}</span>
         </div>
       );
     };
