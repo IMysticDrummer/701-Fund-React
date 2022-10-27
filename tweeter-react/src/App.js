@@ -1,6 +1,4 @@
 import TweetsPage from './components/tweets/TweetsPage';
-
-import './App.css';
 import NewTweetPage from './components/tweets/NewTweetPage';
 import LoginPage from './components/auth/LoginPage';
 

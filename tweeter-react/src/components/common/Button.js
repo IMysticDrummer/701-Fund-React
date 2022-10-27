@@ -24,7 +24,6 @@ const Button = styled.button`
   pointer-events: ${props => (props.disabled ? 'none' : 'auto')};
   text-decoration: none;
   transition: background-color 0.2s;
-
   &:hover {
     background-color: ${props =>
       props.variant === 'primary'

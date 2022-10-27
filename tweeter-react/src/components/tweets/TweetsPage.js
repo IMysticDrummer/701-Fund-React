@@ -6,8 +6,6 @@ import Layout from '../layout/Layout';
 
 import styles from './TweetsPage.module.css';
 
-console.log(styles);
-
 const TweetsPage = () => {
   const [tweets, setTweets] = useState([]);
 
