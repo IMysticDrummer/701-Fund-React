@@ -1,13 +1,10 @@
-
 import { Link, NavLink } from 'react-router-dom';
-
 import classNames from 'classnames';
 import Button from '../common/Button';
 
 import logo, { ReactComponent as Icon } from '../../assets/twitter.svg';
 
 import './Header.css';
-
 import { logout } from '../auth/service';
 
 const Header = ({ className, isLogged, onLogout }) => {
@@ -50,7 +47,6 @@ const Header = ({ className, isLogged, onLogout }) => {
             Login
           </Button>
         )}
-
       </nav>
     </header>
   );

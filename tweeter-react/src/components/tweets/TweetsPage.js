@@ -9,7 +9,6 @@ import Layout from '../layout/Layout';
 import styles from './TweetsPage.module.css';
 
 const TweetsPage = props => {
-
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
