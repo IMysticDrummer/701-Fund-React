@@ -1,8 +1,8 @@
 import Layout from '../layout/Layout';
 
-const NewTweetPage = () => {
+const NewTweetPage = props => {
   return (
-    <Layout title="What are you thinking">
+    <Layout title="What are you thinking" {...props}>
       <div>New tweet page</div>
     </Layout>
   );

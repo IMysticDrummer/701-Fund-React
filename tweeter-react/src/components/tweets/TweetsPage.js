@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { getLatestTweets } from './service';
 import classNames from 'classnames';
 import Layout from '../layout/Layout';
 
 import styles from './TweetsPage.module.css';
 
-console.log(styles);
-
-const TweetsPage = () => {
+const TweetsPage = props => {
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
@@ -27,12 +27,14 @@ const TweetsPage = () => {
   });
 
   return (
-    <Layout title="What's going on...">
+    <Layout title="What's going on..." {...props}>
       <div className={className}>
         {tweets.length ? (
           <ul>
             {tweets.map(tweet => (
-              <li key={tweet.id}>{tweet.content}</li>
+              <li key={tweet.id}>
+                <Link to={`/tweets/${tweet.id}`}>{tweet.content}</Link>
+              </li>
             ))}
           </ul>
         ) : (

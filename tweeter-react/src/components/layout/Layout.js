@@ -1,13 +1,15 @@
 import Header from './Header';
 
-const Layout = ({ children, title }) => (
-  <div>
-    <Header />
-    <main>
-      <h2>{title}</h2>
-      <section>{children}</section>
+import './Layout.css';
+
+const Layout = ({ children, title, ...props }) => (
+  <div className="layout">
+    <Header className="layout-header bordered" {...props} />
+    <main className="layout-main bordered">
+      <h2 className="layout-title bordered">{title}</h2>
+      <section className="layout-content">{children}</section>
     </main>
-    <footer>@ 2022 Keepcoding</footer>
+    <footer className="layout-footer bordered">© 2022 Keepcoding</footer>
   </div>
 );
 
