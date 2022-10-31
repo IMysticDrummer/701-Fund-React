@@ -1,10 +1,10 @@
-import Layout from '../layout/Layout';
+import Page from '../layout/Page';
 
 const NewTweetPage = props => {
   return (
-    <Layout title="What are you thinking" {...props}>
+    <Page title="What are you thinking" {...props}>
       <div>New tweet page</div>
-    </Layout>
+    </Page>
   );
 };
 
